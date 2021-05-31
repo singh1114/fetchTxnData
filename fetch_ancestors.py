@@ -36,7 +36,6 @@ def prepare_txn_data_list(response, block_hash):
             inputs = [a.get('txid') for a in txn.get('vin')]
             txn_data_dict[current_txn_id] = inputs
         if current_index is TOTAL_TXNS_BATCHES:
-            print("breaking stuff")
             break
         current_index = current_index + 1
         txn_data = get_tx_data_using_start_index(block_hash, current_index * 25)
@@ -79,3 +78,5 @@ def get_txn_data_endpoint(block_hash, start_tx_id):
 
 def get_largest_length(x):
     return sorted(test_dict, key = lambda key: len(test_dict[key]))[0:10]
+
+get_max_ancestors()
