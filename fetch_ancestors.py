@@ -8,7 +8,8 @@ def get_max_ancestors():
     print(get_largest_length(final_ancestor_dict))
 
 def fetch_parent_ancestors():
-    # FIXME Issue in this function.
+    # FIXME Issue in this function, not sure why but I am getting empty data in the ancestor dict.
+    # Also, I am unable to figure the grandparents logic.
     final_ancestor_dict = dict()
     txn_data_dict = get_all_tx_data()
     for txid in txn_data_dict.keys():
